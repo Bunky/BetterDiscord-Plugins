@@ -54,9 +54,6 @@ module.exports = (() => {
         const plugin = (Plugin, Library) => {
   const { Patcher, Logger, DiscordContextMenu, WebpackModules } = Library;
 
-  const sendKey = new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', which: 13, keyCode: 13, bubbles: true });
-  Object.defineProperties(sendKey, { keyCode: { value: 13 }, which: { value: 13 } });
-
   return class PasteSend extends Plugin {
     onStart() {
       Patcher.before(Logger, 'log', (t, a) => {
