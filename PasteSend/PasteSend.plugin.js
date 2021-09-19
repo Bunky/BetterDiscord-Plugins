@@ -28,7 +28,7 @@
 @else@*/
 
 module.exports = (() => {
-    const config = {"info":{"name":"PasteSend","authors":[{"name":"Bunky","discord_id":"182872313081888768","github_username":"Bunky"}],"version":"1.0.0","description":"Adds Paste & Send functionality to messages, sending whatever is on your clipboard","github":"https://github.com/Bunky/BetterDiscord-Plugins/tree/main/PasteSend","github_raw":"https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/main/PasteSend/PasteSend.plugin.js"},"main":"index.js"};
+    const config = {"info":{"name":"PasteSend","authors":[{"name":"Bunky","discord_id":"182872313081888768","github_username":"Bunky"}],"version":"1.1.0","description":"Adds Paste & Send functionality to messages, sending whatever is on your clipboard","github":"https://github.com/Bunky/BetterDiscord-Plugins/tree/main/PasteSend","github_raw":"https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/main/PasteSend/PasteSend.plugin.js"},"main":"index.js"};
 
     return !global.ZeresPluginLibrary ? class {
         constructor() {this._config = config;}
@@ -77,7 +77,17 @@ module.exports = (() => {
             label: 'Paste & Send',
             // hint: DiscordNative.clipboard.read().substring(0, 5),
             action: () => {
-              BdApi.findModuleByProps('sendMessage').sendMessage(BdApi.findModuleByProps('getLastSelectedChannelId').getChannelId(), { content: DiscordNative.clipboard.read(), validNonShortcutEmojis: [] });
+              if (DiscordNative.clipboard.read() === "") {
+                // Upload image instead
+                DiscordNative.clipboard.paste();
+
+                // Get uploadModal and submit
+                setTimeout(() => {
+                  document.querySelector('[class*=\"uploadModal-\"]').querySelector('button[type="submit"]').click();
+                }, 15);
+              } else {
+                BdApi.findModuleByProps('sendMessage').sendMessage(BdApi.findModuleByProps('getLastSelectedChannelId').getChannelId(), { content: DiscordNative.clipboard.read(), validNonShortcutEmojis: [] });
+              }
             }
           })
         );
