@@ -28,7 +28,7 @@
 @else@*/
 
 module.exports = (() => {
-    const config = {"info":{"name":"PasteSend","authors":[{"name":"Bunky","discord_id":"182872313081888768","github_username":"Bunky"}],"version":"1.1.0","description":"Adds Paste & Send functionality to messages, sending whatever is on your clipboard","github":"https://github.com/Bunky/BetterDiscord-Plugins/tree/main/PasteSend","github_raw":"https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/main/PasteSend/PasteSend.plugin.js"},"main":"index.js"};
+    const config = {"info":{"name":"PasteSend","authors":[{"name":"Bunky","discord_id":"182872313081888768","github_username":"Bunky"}],"version":"1.1.0","description":"Adds Paste & Send functionality to messages, sending whatever is on your clipboard","github":"https://github.com/Bunky/BetterDiscord-Plugins/tree/main/PasteSend","github_raw":"https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/main/PasteSend/PasteSend.plugin.js"},"changelog":[{"title":"Image support","type":"added","items":["Added support for pasting and sending images on the clipboard"]}],"main":"index.js"};
 
     return !global.ZeresPluginLibrary ? class {
         constructor() {this._config = config;}
