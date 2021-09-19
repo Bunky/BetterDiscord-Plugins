@@ -1,7 +1,7 @@
 /**
  * @name PasteSend
- * @website https://github.com/Bunky/BetterDiscord-Plugins
- * @source https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/master/PasteSend/PasteSend.plugin.js
+ * @website https://github.com/Bunky/BetterDiscord-Plugins/tree/main/PasteSend
+ * @source https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/main/PasteSend/PasteSend.plugin.js
  */
 /*@cc_on
 @if (@_jscript)
@@ -28,7 +28,7 @@
 @else@*/
 
 module.exports = (() => {
-    const config = {"info":{"name":"PasteSend","authors":[{"name":"Bunky","discord_id":"182872313081888768","github_username":"Bunky"}],"version":"1.0.0","description":"Adds Paste & Send functionality to messages, sending whatever is on your clipboard","github":"https://github.com/Bunky/BetterDiscord-Plugins","github_raw":"https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/master/PasteSend/PasteSend.plugin.js"},"main":"index.js"};
+    const config = {"info":{"name":"PasteSend","authors":[{"name":"Bunky","discord_id":"182872313081888768","github_username":"Bunky"}],"version":"1.0.0","description":"Adds Paste & Send functionality to messages, sending whatever is on your clipboard","github":"https://github.com/Bunky/BetterDiscord-Plugins/tree/main/PasteSend","github_raw":"https://raw.githubusercontent.com/Bunky/BetterDiscord-Plugins/main/PasteSend/PasteSend.plugin.js"},"main":"index.js"};
 
     return !global.ZeresPluginLibrary ? class {
         constructor() {this._config = config;}
